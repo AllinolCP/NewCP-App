@@ -32,14 +32,11 @@ jobs:
 
       - name: Flatpak builder install
         if: startsWith(matrix.os, 'ubuntu')
-        run: |
-          sudo apt-get install -y flatpak-builder
-          flatpak --user remote-add --from gnome https://sdk.gnome.org/gnome.flatpakrepo
-          flatpak --user install gnome org.freedesktop.Platform/x86_64/1.4 org.freedesktop.Platform/i386/1.4
+        run: sudo apt-get install -y flatpak-builder
 
       - name: Make and Publish (Ubuntu)
         if: startsWith(matrix.os, 'ubuntu')
-        run: yarn run publish
+        run: DEBUG=electron-forge:*,electron-installer-flatpak,flatpak-bundler electron-forge publish
         env:
           GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
 
