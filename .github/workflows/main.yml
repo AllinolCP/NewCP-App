@@ -30,9 +30,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-      - name: Flatpak install
+      - name: Flatpak builder install
         if: startsWith(matrix.os, 'ubuntu')
-        run: sudo apt install flatpak
+        run: sudo apt-get install -y flatpak-builder
 
 
       - name: Make and Publish (Ubuntu)
