@@ -36,9 +36,10 @@ jobs:
 
       - name: Make and Publish (Ubuntu)
         if: startsWith(matrix.os, 'ubuntu')
-        run: DEBUG=electron-forge:*,electron-installer-flatpak,flatpak-bundler electron-forge publish
+        run: yarn run publish
         env:
           GITHUB_TOKEN: ${{ secrets.BUILD_TOKEN }}
+          DEBUG: electron-forge:*,electron-installer-flatpak,flatpak-bundler
 
       - name: Make and Publish (WINDOWS)
         if: startsWith(matrix.os, 'windows')
