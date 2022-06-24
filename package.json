@@ -54,14 +54,7 @@
         },
         {
           "name": "@electron-forge/maker-flatpak",
-          "config": {
-            "genericName": "NewCP",
-            "productName": "NewCP",
-            "categories": [
-              "Game"
-            ],
-            "icon": "./lib/icons/icon.ico"
-          }
+          "config": {}
         }
       ],
       "publishers": [
