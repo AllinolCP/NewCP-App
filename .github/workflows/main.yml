@@ -32,7 +32,7 @@ jobs:
 
       - name: Flatpak install
         if: startsWith(matrix.os, 'ubuntu')
-        run: apt install flatpak
+        run: sudo apt install flatpak
 
 
       - name: Make and Publish (Ubuntu)
