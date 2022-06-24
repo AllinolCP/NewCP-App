@@ -32,7 +32,9 @@ jobs:
 
       - name: Flatpak builder install
         if: startsWith(matrix.os, 'ubuntu')
-        run: sudo apt-get install -y flatpak-builder
+        run: |
+          sudo apt-get install -y flatpak-builder
+          flatpak --user install gnome org.freedesktop.Sdk/x86_64/1.4
 
 
       - name: Make and Publish (Ubuntu)
