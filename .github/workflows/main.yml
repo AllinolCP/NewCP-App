@@ -34,8 +34,8 @@ jobs:
         if: startsWith(matrix.os, 'ubuntu')
         run: |
           sudo apt-get install -y flatpak-builder
-          flatpak --user install gnome org.freedesktop.Sdk/x86_64/1.4
-
+          flatpak --user remote-add --from gnome https://sdk.gnome.org/gnome.flatpakrepo
+          flatpak --user install gnome org.freedesktop.Platform/x86_64/1.4 org.freedesktop.Platform/i386/1.4
 
       - name: Make and Publish (Ubuntu)
         if: startsWith(matrix.os, 'ubuntu')
