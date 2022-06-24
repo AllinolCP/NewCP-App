@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: yarn
 
-     - name: flatpak-action
+      - name: Flatpak install
         if: startsWith(matrix.os, 'ubuntu')
         uses: louib/flatpak-action@1.0.3
 
